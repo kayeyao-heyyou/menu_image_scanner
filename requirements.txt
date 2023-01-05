@@ -1,0 +1,14 @@
+streamlit
+pandas
+google.oauth2
+google.cloud  
+io  
+sys
+matplotlib.pyplot
+numpy
+PIL
+scipy.ndimage
+fitz
+base64
+pathlib
+copy
