@@ -17,7 +17,7 @@ import copy
 
 #credentials = service_account.Credentials.from_service_account_file(st.json({**st.secrets.gc_api}))
 
-client = vision.ImageAnnotatorClient(credentials=st.json({**st.secrets.gc_api}))
+client = vision.ImageAnnotatorClient(credentials={**st.secrets.gc_api})
 
 
 ## Image to text functions
