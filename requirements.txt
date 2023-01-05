@@ -2,8 +2,6 @@ streamlit
 pandas
 google-auth
 google-cloud-vision  
-io  
-sys
 matplotlib
 numpy
 PIL
