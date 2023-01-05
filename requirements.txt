@@ -6,4 +6,4 @@ matplotlib
 numpy
 scipy
 fitz
-PyMuPDF
+PyMuPDF==1.16.14
