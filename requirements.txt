@@ -5,5 +5,4 @@ google-cloud-vision
 matplotlib
 numpy
 scipy
-fitz
-PyMuPDF==1.16.14
+PyMuPDF
