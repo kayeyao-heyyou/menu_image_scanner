@@ -15,7 +15,7 @@ import copy
 
 ## Google cloud vision credentials
 
-credentials = service_account.Credentials.from_service_account_file(secrets.gc_api)
+credentials = service_account.Credentials.from_service_account_file(**st.secrets.gc_api)
 
 client = vision.ImageAnnotatorClient(credentials=credentials)
 
