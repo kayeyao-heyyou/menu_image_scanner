@@ -4,7 +4,6 @@ google-auth
 google-cloud-vision  
 matplotlib
 numpy
-PIL
 scipy.ndimage
 fitz
 PyMuPDF
