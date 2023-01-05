@@ -15,7 +15,7 @@ import copy
 
 ## Google cloud vision credentials
 
-credentials = service_account.Credentials.from_service_account_file('static-protocol-370805-754699668e4b.json')
+credentials = service_account.Credentials.from_service_account_file(GC_API)
 
 client = vision.ImageAnnotatorClient(credentials=credentials)
 
