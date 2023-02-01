@@ -258,7 +258,7 @@ with tab1:
 
     if uploaded_files is not None:
 	
-        show_pdf(uploaded_files[0])
+        show_pdf(uploaded_files[1])
 		
         try:
             for i in range(0, len(uploaded_files)//5+1):
