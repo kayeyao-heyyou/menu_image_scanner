@@ -20,6 +20,8 @@ import copy
 # client = vision.ImageAnnotatorClient(credentials=credentials)
 client = vision.ImageAnnotatorClient(credentials={**st.secrets.gc_api})
 
+st.write(client)
+
 
 ## Image to text functions
 
