@@ -275,6 +275,16 @@ with tab1:
 	    
             st.header("")
             st.subheader("Convert Image / PDF to text:")
+	
+	    for uploaded_file in uploaded_files2:
+                menu_raw, menu_clean = convert_to_text(file=uploaded_file)
+                menu_raw.insert(0,'source',uploaded_file.name)
+                menu_clean.insert(0,'source',uploaded_file.name)
+                menu_raw_all = pd.concat([menu_raw_all, menu_raw])
+                menu_clean_all = pd.concat([menu_clean_all, menu_clean])
+                menu_clean_all = menu_clean_all.fillna("-")
+                st.session_state.result1 = menu_raw_all
+                st.session_state.result2 = menu_clean_all
 
             if st.button("Convert to Text", key=1):
                 st.header("")
