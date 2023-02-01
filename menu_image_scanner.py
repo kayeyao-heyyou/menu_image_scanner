@@ -15,10 +15,9 @@ import copy
 
 ## Google cloud vision credentials
 
-# credentials = service_account.Credentials.from_service_account_file(st.json({**st.secrets.gc_api}))
+#credentials = service_account.Credentials.from_service_account_file(st.json({**st.secrets.gc_api}))
 
 client = vision.ImageAnnotatorClient(credentials={**st.secrets.gc_api})
-# client = vision.ImageAnnotatorClient(credentials=credentials)
 
 
 ## Image to text functions
@@ -199,7 +198,7 @@ def extract_menu_items_pdf(doc):
         menu_all_page['page'] = p+1
         menu_all = pd.concat([menu_all, menu_all_page]).reset_index(drop=True)
       
-    return menu_all[['item']], menu_final[['item','price']]  
+    return menu_all[['page','item']], menu_final[['page','item','price']]  
 
 
 ## Convert file to text
@@ -257,17 +256,6 @@ with tab1:
     uploaded_files2 = copy.deepcopy(uploaded_files)
 
     if uploaded_files is not None:
-        for uploaded_file in uploaded_files2:
-            menu_raw, menu_clean = convert_to_text(file=uploaded_file)
-            menu_raw.insert(0,'source',uploaded_file.name)
-            menu_clean.insert(0,'source',uploaded_file.name)
-            menu_raw_all = pd.concat([menu_raw_all, menu_raw])
-            menu_clean_all = pd.concat([menu_clean_all, menu_clean])
-            menu_clean_all = menu_clean_all.fillna("-")
-            st.session_state.result1 = menu_raw_all
-            st.session_state.result2 = menu_clean_all
-	
-	
         try:
             for i in range(0, len(uploaded_files)//5+1):
                 cols = st.columns(5)
@@ -316,7 +304,7 @@ with tab1:
             st.dataframe(data=st.session_state.result2.reset_index(drop=True), width=1000, height=None)
 
             st.subheader("Raw Menu Items:")
-            st.download_button("Download", convert_df(st.session_state.result1),f"{vendor_id}_{vendor_name}_menu_raw.csv","text/csv", key=3)    
+            st.download_button("Download", convert_df(st.session_state.result1),f"{vendor_id}_{vendor_name}_menu_raw.csv","text/csv", key=2)    
             st.dataframe(data=st.session_state.result1.reset_index(drop=True), width=1000, height=None)
 
         else:
@@ -335,7 +323,7 @@ with tab2:
 
     st.header("")
     st.subheader("Convert Image to text:")
-    if st.button("Convert to Text",key=4):
+    if st.button("Convert to Text",key=2):
         if uploaded_image is not None:
             try:
                 #st.image(uploaded_image)
