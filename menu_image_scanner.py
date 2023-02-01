@@ -264,11 +264,11 @@ with tab1:
         for i in range(0, len(uploaded_files)//5+1):
 	    cols = st.columns(5)
 	    if (len(uploaded_files) - 5*(i+1)) < 0:
-		for j in range(0, len(uploaded_files) - 5*i):
+	        for j in range(0, len(uploaded_files) - 5*i):
 	            if uploaded_files[5*i+j].name.lower().endswith(('.png', '.jpg', '.jpeg')):
-			cols[j].image(uploaded_files[5*i+j], width=100, caption=uploaded_files[5*i+j].name)
+		        cols[j].image(uploaded_files[5*i+j], width=100, caption=uploaded_files[5*i+j].name)
 		    elif uploaded_files[5*i+j].name.lower().endswith(('.pdf')):
-			show_pdf(uploaded_files[5*i+j])
+		        show_pdf(uploaded_files[5*i+j])
 			    #fitz.open(stream=uploaded_files[5*i+j].read(), filetype="pdf") 
 	    else: 
 		for j in range(0,5):
