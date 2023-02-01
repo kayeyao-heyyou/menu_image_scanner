@@ -304,7 +304,7 @@ with tab1:
             st.dataframe(data=st.session_state.result2.reset_index(drop=True), width=1000, height=None)
 
             st.subheader("Raw Menu Items:")
-            st.download_button("Download", convert_df(st.session_state.result1),f"{vendor_id}_{vendor_name}_menu_raw.csv","text/csv", key=2)    
+            st.download_button("Download", convert_df(st.session_state.result1),f"{vendor_id}_{vendor_name}_menu_raw.csv","text/csv", key=3)    
             st.dataframe(data=st.session_state.result1.reset_index(drop=True), width=1000, height=None)
 
         else:
@@ -323,7 +323,7 @@ with tab2:
 
     st.header("")
     st.subheader("Convert Image to text:")
-    if st.button("Convert to Text",key=2):
+    if st.button("Convert to Text",key=4):
         if uploaded_image is not None:
             try:
                 #st.image(uploaded_image)
