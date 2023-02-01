@@ -221,7 +221,9 @@ def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
 def show_pdf(file_path):
-    base64_pdf = base64.b64encode(file_path.read()).decode('utf-8')
+    with open(file_path,"rb") as f:
+          base64_pdf = base64.b64encode(file_path.read()).decode('utf-8')
+#     base64_pdf = base64.b64encode(file_path.read()).decode('utf-8')
     pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="400" height="250" type="application/pdf">' 
     st.markdown(pdf_display, unsafe_allow_html=True)
 
