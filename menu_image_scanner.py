@@ -254,9 +254,6 @@ with tab1:
     menu_clean_all = pd.DataFrame()
     uploaded_files = st.file_uploader(label="Upload Image or PDF file here:", type=['png','jpg','jpeg','pdf'], accept_multiple_files=True)
     uploaded_files2 = copy.deepcopy(uploaded_files)
-	
-    for uploaded_file in uploaded_files2:
-        menu_raw, menu_clean = convert_to_text(file=uploaded_file)
 
     if uploaded_files is not None:
         try:
