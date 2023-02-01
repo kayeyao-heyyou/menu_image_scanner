@@ -198,7 +198,7 @@ def extract_menu_items_pdf(doc):
         menu_all_page['page'] = p+1
         menu_all = pd.concat([menu_all, menu_all_page]).reset_index(drop=True)
       
-    return menu_all[['page','item']], menu_final[['page','item','price']]  
+    return menu_all[['item']], menu_final[['item','price']]  
 
 
 ## Convert file to text
