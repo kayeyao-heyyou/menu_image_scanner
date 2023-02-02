@@ -230,6 +230,7 @@ def show_pdf(file_path):
 
 st.title("Menu Image Scanner")
 st.markdown("This web app converts menu images or pdf to text.")
+st.markdown("Cost: Free 1,000 images per month + $1.50 for every next 1,000 images")
 st.subheader("")
 st.subheader("Input vendor id and name here:")
 
